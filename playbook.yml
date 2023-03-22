@@ -1,0 +1,9 @@
+---
+- hosts: "localhost"
+  gather_facts: no
+  vars:
+    URL: "{{ netbox_service_url }}"
+    API_TOKEN: "{{ netbox_service_account_password }}"
+  tasks:
+    - name: TASK 1 Delete IP Addresses
+      script: netbox_delete_cus.py {{URL}} {{API_TOKEN}} {{u_four_letter_code}}
